@@ -133,7 +133,7 @@ onMounted(fetchProducts)
   object-fit: cover;
 }
 
-@media (max-width: 200px) {
+@media (max-width: 450px) {
   .banner-img {
     width: 100%;
   }
@@ -142,7 +142,7 @@ onMounted(fetchProducts)
 .banner-text {
   position: absolute;
   color: white;
-  font-size: 4rem; /* Tamaño grande en pantallas grandes */
+  font-size: 3rem; /* Tamaño grande en pantallas grandes */
   font-weight: bold;
   text-align: center;
   width: 100%;
