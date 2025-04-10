@@ -18,8 +18,8 @@ const toggleMenu = () => {
 
     <div class="right-section">
       <nav class="nav-links" :class="{ open: menuOpen }">
-        <router-link to="/about" class="nav-link">Nosotros</router-link>
-        <a href="#" class="nav-link">Contacto</a>
+        <router-link to="/about" class="nav-link" @click="toggleMenu">Nosotros</router-link>
+        <a href="#" class="nav-link" @click="toggleMenu">Contacto</a>
       </nav>
 
       <div class="icons">
@@ -44,15 +44,17 @@ const toggleMenu = () => {
   text-decoration: none;
   color: inherit;
   font-weight: 600;
-  padding: 5px 10px;
+  padding: 10px;
+  display: block; /* Para ocupar toda la caja */
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
 }
 
 .nav-link:hover {
-  color: #ff6600; /* Color de hover opcional */
+  color: #ff6600;
 }
-</style>
 
-<style scoped>
+/* HEADER */
 .header {
   display: flex;
   justify-content: space-between;
@@ -88,15 +90,26 @@ const toggleMenu = () => {
 }
 
 .nav-links {
+  display: none;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  width: 150px; /* Tamaño compacto */
+  background: white;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px; /* Bordes redondeados */
+  z-index: 1000;
+}
+
+.nav-links.open {
   display: flex;
-  gap: 20px;
-  font-size: 18px;
-  font-family: 'Poppins', sans-serif;
 }
 
 .nav-links a {
-  text-decoration: none;
-  color: black;
+  padding: 10px;
 }
 
 /* ICONOS */
@@ -151,24 +164,14 @@ const toggleMenu = () => {
   }
 
   .nav-links {
-    display: none;
-    position: absolute;
-    top: 80px;
-    right: 0;
-    width: 100%;
-    background: white;
-    flex-direction: column;
-    text-align: center;
-    padding: 20px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-links.open {
-    display: flex;
+    right: 10px;
+    width: 140px;
   }
 
   .menu-button {
     display: block;
+    position: relative;
+    z-index: 1100;
   }
 
   .icons {

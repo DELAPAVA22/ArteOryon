@@ -23,6 +23,7 @@
 </template>
 
 <style scoped>
+/* CONTENEDOR PRINCIPAL */
 .about-container {
   display: flex;
   flex-direction: column;
@@ -30,36 +31,83 @@
   padding: 20px;
 }
 
+/* CONTENIDO */
 .about-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: rgb(255, 208, 121);
-  padding: 20px;
-  max-width: 800px;
+  padding: 30px;
+  max-width: 900px;
   border-radius: 8px;
   font-family: 'Poppins', sans-serif;
-  font-size: small;
+  font-size: 1rem;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
 }
 
+/* SECCIÓN DE TEXTO */
 .text-section {
   flex: 1;
   text-align: justify;
   font-size: 1.2rem;
-  line-height: 1.5;
+  line-height: 1.6;
   margin-right: 20px;
 }
 
+/* SECCIÓN DE IMAGEN */
 .image-section {
-  flex: 0.5;
+  flex: 0.8;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .horus-image {
-  width: 400px;
-  max-width: 500px; /* Ajusta el tamaño de la imagen */
-  opacity: 0.5; /* Opacidad del 50% */
+  width: 350px;
+  max-width: 100%;
+  opacity: 0.6; /* Opacidad ajustada */
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column; /* Apila los elementos en pantallas pequeñas */
+    text-align: center;
+    padding: 20px;
+  }
+
+  .text-section {
+    font-size: 1rem;
+    margin-right: 0;
+  }
+
+  .image-section {
+    margin-top: 20px;
+  }
+
+  .horus-image {
+    width: 250px;
+    opacity: 0.7; /* Más visible en móviles */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    padding: 10px;
+  }
+
+  .about-content {
+    padding: 15px;
+  }
+
+  .text-section {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .horus-image {
+    width: 200px;
+    opacity: 0.8;
+  }
 }
 </style>
