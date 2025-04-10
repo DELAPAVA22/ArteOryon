@@ -142,7 +142,7 @@ onMounted(fetchProducts)
 .banner-text {
   position: absolute;
   color: white;
-  font-size: 4rem;
+  font-size: 4rem; /* Tamaño grande en pantallas grandes */
   font-weight: bold;
   text-align: center;
   width: 100%;
@@ -150,6 +150,23 @@ onMounted(fetchProducts)
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Poppins', sans-serif;
+  padding: 10px;
+}
+
+/* 🔹 Ajuste para celulares (menos de 768px) */
+@media screen and (max-width: 768px) {
+  .banner-text {
+    font-size: 2rem; /* Reduce el tamaño de la fuente */
+    width: 90%; /* Evita que el texto se corte en pantallas pequeñas */
+  }
+}
+
+/* 🔹 Ajuste para celulares aún más pequeños (menos de 480px) */
+@media screen and (max-width: 480px) {
+  .banner-text {
+    font-size: 1.5rem; /* Reduce aún más el tamaño */
+    width: 95%;
+  }
 }
 
 /* SECCIÓN DE PRODUCTOS */
