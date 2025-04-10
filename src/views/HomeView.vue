@@ -154,7 +154,7 @@ onMounted(fetchProducts)
 }
 
 /* 🔹 Ajuste para celulares (menos de 768px) */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 400px) {
   .banner-text {
     font-size: 2rem; /* Reduce el tamaño de la fuente */
     width: 90%; /* Evita que el texto se corte en pantallas pequeñas */
