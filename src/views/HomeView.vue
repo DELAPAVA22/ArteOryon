@@ -133,7 +133,7 @@ onMounted(fetchProducts)
   object-fit: cover;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 200px) {
   .banner-img {
     width: 100%;
   }
